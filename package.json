@@ -1,0 +1,22 @@
+{
+  "name": "@noedel/commit-stats",
+  "version": "0.0.1",
+  "description": "Gather statistics about git commits",
+  "main": "index.js",
+  "author": "Sam Noedel <sam.noedel@gmail.com>",
+  "license": "MIT",
+  "repository": "delta62/commit-stats",
+  "scripts": {
+    "start": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.0",
+    "@types/yargs": "^12.0.9",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "@noedel/editcount": "^1.0.0",
+    "rxjs": "^6.4.0",
+    "yargs": "^13.2.2"
+  }
+}
