@@ -8,7 +8,7 @@
   "repository": "delta62/commit-stats",
   "scripts": {
     "start": "tsc -w",
-    "script": "yarn run tsc"
+    "build": "yarn run tsc"
   },
   "devDependencies": {
     "@types/node": "^11.11.0",
