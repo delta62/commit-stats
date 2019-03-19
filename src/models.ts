@@ -4,5 +4,6 @@ export interface Args {
   to: string
   'no-creations': boolean
   'no-deletions': boolean
+  'no-renames': boolean
   format: 'json' | 'csv'
 }

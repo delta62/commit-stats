@@ -10,6 +10,7 @@ export default function main(args: Args) {
   let changes = fileStream(args)
     .pipe(filter(file => !file.isCreated || !args['no-creations']))
     .pipe(filter(file => !file.isDeleted || !args['no-deletions']))
+    .pipe(filter(file => !file.isRename  || !args['no-renames']))
 
   let outputStream: Observable<string>
   if (args.format === 'json') {

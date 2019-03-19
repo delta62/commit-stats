@@ -26,6 +26,10 @@ let args = yargs
     desc: 'Omit deleted files from the output',
     type: 'boolean'
   })
+  .option('no-renames', {
+    desc: 'Omit renamed files from the output',
+    type: 'boolean'
+  })
   .option('format', {
     choices: [ 'json', 'csv' ],
     desc: 'How output should be formatted',
