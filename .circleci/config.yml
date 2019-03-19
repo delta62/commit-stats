@@ -1,9 +1,14 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+executors:
+  build-executor:
     docker:
       - image: circleci/node:10
     working_directory: ~/repo
+
+jobs:
+  build:
+    executor: build-executor
     steps:
       - checkout
       - restore_cache:
@@ -15,22 +20,31 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn run build
+      - run: yarn test
   publish:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/repo
+    executor: build-executor
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install --non-interactive --frozen-lockfile
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-      - run: yarn run build
       - run: yarn publish --access public
 
 workflows:
   version: 2
   tagged-build:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
       - publish:
           requires:
             - build
@@ -38,4 +52,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /v[0-9]+(\.[0-9]+)*/
+              only: /^v\d+\.\d+\.\d+$/
