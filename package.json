@@ -6,6 +6,7 @@
   "author": "Sam Noedel <sam.noedel@gmail.com>",
   "license": "MIT",
   "repository": "delta62/commit-stats",
+  "bin": "bin/cli.js",
   "scripts": {
     "start": "tsc -w",
     "build": "yarn run tsc"
@@ -16,7 +17,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "@noedel/editcount": "^1.0.0",
+    "@noedel/editcount": "^1.0.6",
     "rxjs": "^6.4.0",
     "yargs": "^13.2.2"
   }

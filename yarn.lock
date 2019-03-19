@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@noedel/editcount@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@noedel/editcount/-/editcount-1.0.1.tgz#daaf55acb5cb702b400c3e918831afb8084f0932"
-  integrity sha512-U3cWoaA6UXHe1fZzJe4tBer2ChisCUTM3cDES2R6TQ+9WBJjGBVvose5uW6Xn/Z/w+29e7ipjANtlFOFJxF27g==
+"@noedel/editcount@^1.0.6":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@noedel/editcount/-/editcount-1.1.2.tgz#8a537eddbcbe4696a9fb346891295c2bcd119baf"
+  integrity sha512-cp5rX4k83oBnyqvsKCq38PDRkVHc4FRadpp3x2HHsjV9+F2QyIouuVh5vWjxkOSHQUbfyr+/8SGrgJH8W3dCVg==
   dependencies:
     rxjs "^6.4.0"
 
