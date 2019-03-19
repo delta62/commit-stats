@@ -16,13 +16,13 @@ export default function main(args: Args) {
   if (args.format === 'json') {
     outputStream = concat(
       from([ '[' ]),
-      changes.pipe(map(jsonItem)),
+      changes.pipe(map(x => jsonItem(args, x))),
       from([ ']' ])
     )
   } else {
     outputStream = concat(
       from([ csvHeader() ]),
-      changes.pipe(map(csvRow))
+      changes.pipe(map(x => csvRow(args, x)))
     )
   }
 

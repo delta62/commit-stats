@@ -1,4 +1,6 @@
 import { FileDiff } from '@noedel/editcount'
+import { Args } from '../models'
+import iso from './iso'
 
 export function csvHeader(): string {
   let columns = [
@@ -15,9 +17,9 @@ export function csvHeader(): string {
   return `${columns.join(',')}\n`
 }
 
-export function csvRow(change: FileDiff): string {
+export function csvRow(args: Args, change: FileDiff): string {
   let columns = [
-    change.timestamp,
+    args.iso ? iso(change.timestamp) : change.timestamp,
     change.hash,
     change.filename,
     change.additions,

@@ -35,6 +35,10 @@ let args = yargs
     desc: 'How output should be formatted',
     default: 'json'
   })
+  .option('iso', {
+    desc: 'Format dates as ISO8601 instead of timestamps',
+    type: 'boolean'
+  })
   .demandOption([ 'from', 'to' ])
   .help()
   .argv as yargs.Arguments<Args>
