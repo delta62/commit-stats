@@ -1,6 +1,6 @@
 {
   "name": "@noedel/commit-stats",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Gather statistics about git commits",
   "main": "index.js",
   "author": "Sam Noedel <sam.noedel@gmail.com>",
